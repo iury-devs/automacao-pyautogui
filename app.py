@@ -4,7 +4,7 @@ import pyautogui
 planilha_vendas = openpyxl.load_workbook('venda_de_produto.xlsx')
 pagina_vendas = planilha_vendas['vendas']
 
-for linha in pagina_vendas.iter_rows:
+for linha in pagina_vendas.iter_rows(min_row=2):
     #Nome cliente
     pyautogui.click(1808, 452, duration=1.5)
     pyautogui.write(linha[0].value)
